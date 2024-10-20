@@ -46,7 +46,7 @@ def run():
     
     response = requests.post(url, json=payload, headers=headers)
     
-    print(response.text)
+    st.write(response.text)
 
 
 
