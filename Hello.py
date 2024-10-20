@@ -46,5 +46,5 @@ def run():
 
 
 if __name__ == "__main__":
-    os.environ["TOGETHER_API_KEY""] = 87f9262fea2d4be229dcd50e8bfaec073709d02a7ec24d55f2820bb77c97c86387f9262fea2d4be229dcd50e8bfaec073709d02a7ec24d55f2820bb77c97c863
+    os.environ["TOGETHER_API_KEY"] = "87f9262fea2d4be229dcd50e8bfaec073709d02a7ec24d55f2820bb77c97c86387f9262fea2d4be229dcd50e8bfaec073709d02a7ec24d55f2820bb77c97c863"
     run()
