@@ -63,12 +63,12 @@ if __name__ == "__main__":
     model_options = {
         "Flux Pro": "fal-ai/flux-pro",
         "Flux Dev": "fal-ai/flux/dev",
-        "Flux Schnell": "fal-ai/flux/schnell",
+        "black-forest-labs/FLUX.1-schnell-Free": "black-forest-labs/FLUX.1-schnell-Free",
         "Flux Realism": "fal-ai/flux-realism",
         "stabilityai/stable-diffusion-xl-base-1.0": "stabilityai/stable-diffusion-xl-base-1.0"
     }
 
-    selected_model = st.selectbox("Select Model:", list(model_options.keys()), index=4)
+    selected_model = st.selectbox("Select Model:", list(model_options.keys()), index=2)
 
     image_size = st.selectbox("Image Size:", ["square_hd", "square", "portrait_4_3", "portrait_16_9", "landscape_4_3", "landscape_16_9"], index=0)
 
