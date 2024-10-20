@@ -14,7 +14,7 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
-from together import Together
+import requests
 import os
 
 LOGGER = get_logger(__name__)
@@ -28,19 +28,25 @@ def run():
 
     st.write("# Welcome to Streamlit! 👋")
 
-    st.sidebar.success("Select a demo above.")
-    client = Together()
-    response = client.images.generate(
-        prompt="persian cat",
-        model="stabilityai/stable-diffusion-xl-base-1.0",
-        width=512,
-        height=512,
-        steps=40,
-        n=1,
-        seed=10000,
-        response_format="b64_json"
-    )
-    print(response.data[0].b64_json)
+    url = "https://api.together.xyz/v1/images/generations"
+    
+    payload = {
+        "prompt": "cat floating in space, cinematic",
+        "model": "stabilityai/stable-diffusion-xl-base-1.0",
+        "steps": 20,
+        "n": 1,
+        "height": 1024,
+        "width": 1024
+    }
+    headers = {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "Bearer 87f9262fea2d4be229dcd50e8bfaec073709d02a7ec24d55f2820bb77c97c863"
+    }
+    
+    response = requests.post(url, json=payload, headers=headers)
+    
+    print(response.text)
 
 
 
